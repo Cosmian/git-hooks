@@ -103,10 +103,18 @@
     types: [rust]
     pass_filenames: false
 
+  - id: unstable-cargo-format
+    name: unstable-cargo-format
+    description: cargo format with unstable features
+    entry: cargo fmt --all -- --unstable-features --config edition="2021",imports_granularity="Crate",format_macro_matchers=true,format_strings=true,reorder_impl_items=true,group_imports="StdExternalCrate",unstable_features=true,use_field_init_shorthand=true
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: cargo-format
     name: cargo-format
     description: cargo format
-    entry: cargo fmt --all -- --unstable-features --config edition="2021",imports_granularity="Crate",format_macro_matchers=true,format_strings=true,reorder_impl_items=true,group_imports="StdExternalCrate",unstable_features=true,use_field_init_shorthand=true
+    entry: cargo fmt --all
     language: system
     types: [rust]
     pass_filenames: false
