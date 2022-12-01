@@ -42,7 +42,7 @@
 
   - id: clippy-all-targets-all-features
     name: clippy all with all targets and all features
-    description: clippy all with all targets and all features
+    description: cargo clippy all with all targets and all features
     entry: clippy --workspace --all-targets --all-features -- -D warnings
     language: system
     types: [rust]
