@@ -24,9 +24,9 @@
     pass_filenames: false
 
   - id: cargo-tests-all
-    name: cargo tests all features
-    description: cargo test all features
-    entry: cargo test --all-features -- --nocapture
+    name: cargo tests everything
+    description: cargo test all features/targets on workspace
+    entry: cargo test --all-targets --all-features --workspace -- --nocapture
     language: system
     types: [rust]
     pass_filenames: false
