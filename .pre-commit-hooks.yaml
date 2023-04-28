@@ -159,6 +159,14 @@
     types: [rust]
     pass_filenames: false
 
+  - id: cargo-test-doc
+    name: cargo-test-doc
+    description: cargo test and run doc examples
+    entry: cargo test --all-features --doc --workspace
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: dprint-toml-fix
     name: dprint-toml-fix
     description: dprint linter/formatter (in Rust)
