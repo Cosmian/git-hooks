@@ -151,6 +151,14 @@
     types: [rust]
     pass_filenames: false
 
+  - id: cargo-udeps
+    name: cargo-udeps
+    description: cargo udeps - verify useless dependencies
+    entry: cargo udeps --workspace --all-targets --all-features
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: dprint-toml-fix
     name: dprint-toml-fix
     description: dprint linter/formatter (in Rust)
