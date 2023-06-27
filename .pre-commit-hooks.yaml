@@ -18,7 +18,7 @@
   - id: cargo-outdated
     name: cargo outdated
     description: Check outdated deps
-    entry: cargo outdated -wR
+    entry: cargo +nightly outdated -wR
     language: system
     types: [rust]
     pass_filenames: false
@@ -153,8 +153,8 @@
 
   - id: cargo-udeps
     name: cargo-udeps
-    description: cargo udeps - verify useless dependencies
-    entry: cargo udeps --workspace --all-targets --all-features
+    description: cargo +nightly udeps - verify useless dependencies
+    entry: cargo +nightly udeps --workspace --all-targets --all-features
     language: system
     types: [rust]
     pass_filenames: false
