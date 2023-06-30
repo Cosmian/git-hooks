@@ -153,8 +153,8 @@
 
   - id: cargo-udeps
     name: cargo-udeps
-    description: cargo +nightly udeps - verify useless dependencies
-    entry: cargo +nightly udeps --workspace --all-targets --all-features
+    description: cargo +nightly-2023-06-27 udeps - verify useless dependencies
+    entry: cargo +nightly-2023-06-27 udeps --workspace --all-targets --all-features
     language: system
     types: [rust]
     pass_filenames: false
