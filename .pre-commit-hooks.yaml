@@ -183,6 +183,14 @@
     types: [rust]
     pass_filenames: false
 
+  - id: cargo-machete
+    name: cargo-machete
+    description: cargo machete
+    entry: cargo machete
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: dprint-toml-fix
     name: dprint-toml-fix
     description: dprint linter/formatter (in Rust)
