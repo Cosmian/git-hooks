@@ -7,10 +7,18 @@
     types: [rust]
     pass_filenames: false
 
-  - id: cargo-audit
+  - id: cargo-audit-deny-warnings
     name: cargo audit
     description: Check cargo audit
     entry: cargo audit --deny warnings
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: cargo-audit
+    name: cargo audit
+    description: Check cargo audit
+    entry: cargo audit
     language: system
     types: [rust]
     pass_filenames: false
