@@ -175,10 +175,26 @@
     types: [rust]
     pass_filenames: false
 
+  - id: cargo-test
+    name: cargo-test
+    description: cargo test
+    entry: cargo test
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: cargo-test-doc
     name: cargo-test-doc
     description: cargo test and run doc examples
     entry: cargo test --all-features --doc --workspace
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: cargo-build-kms
+    name: cargo-build-kms
+    description: cargo build --no-default-features --features insecure
+    entry: cargo build --no-default-features --features insecure
     language: system
     types: [rust]
     pass_filenames: false
