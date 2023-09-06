@@ -31,6 +31,14 @@
     types: [rust]
     pass_filenames: false
 
+  - id: docker-compose-up
+    name: docker compose up -d
+    description: docker compose up -d
+    entry: docker compose up -d
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: cargo-tests-all
     name: cargo tests everything
     description: cargo test all features/targets on workspace
@@ -52,6 +60,14 @@
     name: clippy all with all targets and all features
     description: cargo clippy all with all targets and all features
     entry: cargo clippy --workspace --all-targets --all-features -- -D warnings
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-all-targets-all-features-release
+    name: clippy all with all targets and all features
+    description: cargo clippy all with all targets and all features
+    entry: cargo clippy --workspace --all-targets --all-features --release -- -D warnings
     language: system
     types: [rust]
     pass_filenames: false
