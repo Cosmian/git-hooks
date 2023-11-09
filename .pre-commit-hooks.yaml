@@ -239,10 +239,18 @@
     types: [text]
     pass_filenames: false
 
+  - id: npm-install
+    name: npm-install
+    description: npm install
+    entry: npm install
+    language: system
+    types: [text]
+    pass_filenames: false
+
   - id: npm-test
     name: npm-test
-    description: npm install && npm test
-    entry: npm install && npm test
+    description: npm test
+    entry: npm test
     language: system
     types: [text]
     pass_filenames: false
