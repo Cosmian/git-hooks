@@ -230,3 +230,19 @@
     language: system
     types: [text]
     pass_filenames: false
+
+  - id: npm-run-format
+    name: npm-run-format
+    description: npm run format
+    entry: npm run format
+    language: system
+    types: [text]
+    pass_filenames: false
+
+  - id: npm-test
+    name: npm-test
+    description: npm install && npm test
+    entry: npm install && npm test
+    language: system
+    types: [text]
+    pass_filenames: false
