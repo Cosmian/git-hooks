@@ -36,7 +36,7 @@
     description: docker compose up -d
     entry: docker compose up -d
     language: system
-    types: [rust]
+    types: [text]
     pass_filenames: false
 
   - id: docker-compose-down
@@ -44,7 +44,7 @@
     description: docker compose down --remove-orphans
     entry: docker compose down --remove-orphans
     language: system
-    types: [rust]
+    types: [text]
     pass_filenames: false
 
   - id: cargo-tests-all
