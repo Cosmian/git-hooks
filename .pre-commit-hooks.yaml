@@ -39,6 +39,14 @@
     types: [rust]
     pass_filenames: false
 
+  - id: docker-compose-down
+    name: docker compose down
+    description: docker compose down --remove-orphans
+    entry: docker compose down --remove-orphans
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: cargo-tests-all
     name: cargo tests everything
     description: cargo test all features/targets on workspace
