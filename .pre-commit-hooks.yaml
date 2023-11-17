@@ -74,7 +74,7 @@
   pass_filenames: false
 
 - id: clippy-all-targets-all-features-no-findex
-  name: clippy all with all targets and all features
+  name: clippy all with all targets and all features no findex
   description: cargo clippy all with all targets and all features
   entry: cargo clippy --workspace --exclude cloudproof_findex --all-targets --all-features -- -D warnings
   language: system
@@ -100,7 +100,7 @@
   pass_filenames: false
 
 - id: clippy-autofix-all-no-findex
-  name: clippy all with autofix
+  name: clippy all with autofix no findex
   description: clippy all with autofix
   entry:
     cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
@@ -130,7 +130,7 @@
   pass_filenames: false
 
 - id: clippy-autofix-pedantic-no-findex
-  name: clippy pedantic with autofix
+  name: clippy pedantic with autofix no findex
   description: cargo clippy pedantic
   entry:
     cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
@@ -160,7 +160,7 @@
   pass_filenames: false
 
 - id: clippy-autofix-nursery-no-findex
-  name: clippy nursery with autofix
+  name: clippy nursery with autofix no findex
   description: clippy nursery with autofix and possible-broken-code
   entry:
     cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
@@ -190,7 +190,7 @@
   pass_filenames: false
 
 - id: clippy-autofix-others-no-findex
-  name: clippy correctness suspicious style complexity perf with autofix
+  name: clippy correctness suspicious style complexity perf with autofix no findex
   description: clippy correctness suspicious style complexity perf with autofix and possible broken code
   entry:
     cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
