@@ -72,6 +72,14 @@
     types: [rust]
     pass_filenames: false
 
+  - id: clippy-all-targets-all-features-no-findex
+    name: clippy all with all targets and all features
+    description: cargo clippy all with all targets and all features
+    entry: cargo clippy --workspace --exclude cloudproof_findex --all-targets --all-features -- -D warnings
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: clippy-all-targets-all-features-release
     name: clippy all with all targets and all features
     description: cargo clippy all with all targets and all features
@@ -139,6 +147,33 @@
     description: clippy correctness suspicious style complexity perf with autofix and possible broken code
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-autofix-ffi-findex
+    name: clippy all lints included. Scope=ffi
+    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+    entry: cargo clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+      -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-autofix-python-findex
+    name: clippy all lints included. Scope=python
+    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+    entry: cargo clippy --all-targets --features python --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+      -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-autofix-wasm-findex
+    name: clippy all lints included. Scope=wasm_bindgen
+    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+    entry: cargo clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+      -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
     language: system
     types: [rust]
     pass_filenames: false
