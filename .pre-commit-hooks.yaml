@@ -50,7 +50,7 @@
   - id: cargo-tests-all
     name: cargo tests everything
     description: cargo test all features/targets on workspace
-    entry: cargo test --all-targets --all-features --workspace -- --nocapture
+    entry: cargo test --all-targets --all-features --workspace
     language: system
     types: [rust]
     pass_filenames: false
