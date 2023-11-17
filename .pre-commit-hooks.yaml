@@ -1,299 +1,351 @@
 ---
-  - id: cargo-check-semver
-    name: cargo check semver
-    description: Check semver crate version considering potential breaking changes.
-    entry: cargo semver-checks check-release
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-check-semver
+  name: cargo check semver
+  description: Check semver crate version considering potential breaking changes.
+  entry: cargo semver-checks check-release
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-audit-deny-warnings
-    name: cargo audit
-    description: Check cargo audit
-    entry: cargo audit --deny warnings
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-audit-deny-warnings
+  name: cargo audit
+  description: Check cargo audit
+  entry: cargo audit --deny warnings
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-audit
-    name: cargo audit
-    description: Check cargo audit
-    entry: cargo audit
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-audit
+  name: cargo audit
+  description: Check cargo audit
+  entry: cargo audit
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-outdated
-    name: cargo outdated
-    description: Check outdated deps
-    entry: cargo +nightly outdated -wR
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-outdated
+  name: cargo outdated
+  description: Check outdated deps
+  entry: cargo +nightly outdated -wR
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: docker-compose-up
-    name: docker compose up -d
-    description: docker compose up -d
-    entry: docker compose up -d
-    language: system
-    types: [text]
-    pass_filenames: false
+- id: docker-compose-up
+  name: docker compose up -d
+  description: docker compose up -d
+  entry: docker compose up -d
+  language: system
+  types: [text]
+  pass_filenames: false
 
-  - id: docker-compose-down
-    name: docker compose down
-    description: docker compose down --remove-orphans
-    entry: docker compose down --remove-orphans
-    language: system
-    types: [text]
-    pass_filenames: false
+- id: docker-compose-down
+  name: docker compose down
+  description: docker compose down --remove-orphans
+  entry: docker compose down --remove-orphans
+  language: system
+  types: [text]
+  pass_filenames: false
 
-  - id: cargo-tests-all
-    name: cargo tests everything
-    description: cargo test all features/targets on workspace
-    entry: cargo test --all-targets --all-features --workspace
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-tests-all
+  name: cargo tests everything
+  description: cargo test all features/targets on workspace
+  entry: cargo test --all-targets --all-features --workspace
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-all-possible-broken-code
-    name: clippy all with autofix and possible broken code
-    description: clippy all with autofix and possible broken code
-    entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
-      -D warnings -Wmissing_docs -W clippy::all
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-all-possible-broken-code
+  name: clippy all with autofix and possible broken code
+  description: clippy all with autofix and possible broken code
+  entry:
+    cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
+    -D warnings -Wmissing_docs -W clippy::all
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-all-targets-all-features
-    name: clippy all with all targets and all features
-    description: cargo clippy all with all targets and all features
-    entry: cargo clippy --workspace --all-targets --all-features -- -D warnings
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-all-targets-all-features
+  name: clippy all with all targets and all features
+  description: cargo clippy all with all targets and all features
+  entry: cargo clippy --workspace --all-targets --all-features -- -D warnings
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-all-targets-all-features-no-findex
-    name: clippy all with all targets and all features
-    description: cargo clippy all with all targets and all features
-    entry: cargo clippy --workspace --exclude cloudproof_findex --all-targets --all-features -- -D warnings
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-all-targets-all-features-no-findex
+  name: clippy all with all targets and all features
+  description: cargo clippy all with all targets and all features
+  entry: cargo clippy --workspace --exclude cloudproof_findex --all-targets --all-features -- -D warnings
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-all-targets-all-features-release
-    name: clippy all with all targets and all features
-    description: cargo clippy all with all targets and all features
-    entry: cargo clippy --workspace --all-targets --all-features --release -- -D warnings
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-all-targets-all-features-release
+  name: clippy all with all targets and all features
+  description: cargo clippy all with all targets and all features
+  entry: cargo clippy --workspace --all-targets --all-features --release -- -D warnings
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-all
-    name: clippy all with autofix
-    description: clippy all with autofix
-    entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
-      -Wmissing_docs -W clippy::all
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-all
+  name: clippy all with autofix
+  description: clippy all with autofix
+  entry:
+    cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -Wmissing_docs -W clippy::all
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-pedantic-possible-broken-code
-    name: clippy pedantic with autofix and possible broken code
-    description: clippy pedantic with autofix and possible broken code
-    entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
-      -D warnings -W clippy::pedantic
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-all-no-findex
+  name: clippy all with autofix
+  description: clippy all with autofix
+  entry:
+    cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -Wmissing_docs -W clippy::all
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-pedantic
-    name: clippy pedantic with autofix
-    description: cargo clippy pedantic
-    entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
-      -W clippy::pedantic
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-pedantic-possible-broken-code
+  name: clippy pedantic with autofix and possible broken code
+  description: clippy pedantic with autofix and possible broken code
+  entry:
+    cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
+    -D warnings -W clippy::pedantic
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-nursery-possible-broken-code
-    name: clippy nursery with autofix and possible-broken-code
-    description: clippy nursery with autofix and possible-broken-code
-    entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
-      -D warnings -W clippy::nursery
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-pedantic
+  name: clippy pedantic with autofix
+  description: cargo clippy pedantic
+  entry:
+    cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::pedantic
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-nursery
-    name: clippy nursery with autofix
-    description: clippy nursery with autofix and possible-broken-code
-    entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
-      -W clippy::nursery
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-pedantic-no-findex
+  name: clippy pedantic with autofix
+  description: cargo clippy pedantic
+  entry:
+    cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::pedantic
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-others-possible-broken-code
-    name: clippy correctness suspicious style complexity perf with autofix and possible broken code
-    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
-    entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
-      -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-nursery-possible-broken-code
+  name: clippy nursery with autofix and possible-broken-code
+  description: clippy nursery with autofix and possible-broken-code
+  entry:
+    cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
+    -D warnings -W clippy::nursery
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-others
-    name: clippy correctness suspicious style complexity perf with autofix
-    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
-    entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
-      -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-nursery
+  name: clippy nursery with autofix
+  description: clippy nursery with autofix and possible-broken-code
+  entry:
+    cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::nursery
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-ffi-findex
-    name: clippy all lints included. Scope=ffi
-    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
-    entry: cargo clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
-      -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-nursery-no-findex
+  name: clippy nursery with autofix
+  description: clippy nursery with autofix and possible-broken-code
+  entry:
+    cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::nursery
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-python-findex
-    name: clippy all lints included. Scope=python
-    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
-    entry: cargo clippy --all-targets --features python --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
-      -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-others-possible-broken-code
+  name: clippy correctness suspicious style complexity perf with autofix and possible broken code
+  description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+  entry:
+    cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
+    -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: clippy-autofix-wasm-findex
-    name: clippy all lints included. Scope=wasm_bindgen
-    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
-    entry: cargo clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
-      -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-others
+  name: clippy correctness suspicious style complexity perf with autofix
+  description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+  entry:
+    cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: nightly-cargo-format
-    name: nightly-cargo-format
-    description: cargo format with unstable features
-    entry: cargo +nightly fmt --all -- --unstable-features --config edition="2021",imports_granularity="Crate",format_macro_matchers=true,format_strings=true,reorder_impl_items=true,group_imports="StdExternalCrate",unstable_features=true,use_field_init_shorthand=true
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-others-no-findex
+  name: clippy correctness suspicious style complexity perf with autofix
+  description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+  entry:
+    cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: stable-cargo-format
-    name: stable-cargo-format
-    description: cargo format with specific stable Rust version
-    entry: cargo +stable fmt --all
-    language: system
-    types: [rust]
-    pass_filenames: false
+### FINDEX feature
+- id: clippy-autofix-ffi-findex
+  name: clippy all lints included. Scope=ffi
+  description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+  entry:
+    cargo clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-format
-    name: cargo-format
-    description: cargo format
-    entry: cargo fmt --all
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-python-findex
+  name: clippy all lints included. Scope=python
+  description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+  entry:
+    cargo clippy --all-targets --features python --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-dry-publish
-    name: cargo-dry-publish
-    description: cargo publish (dry)
-    entry: cargo publish --dry-run
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: clippy-autofix-wasm-findex
+  name: clippy all lints included. Scope=wasm_bindgen
+  description: clippy correctness suspicious style complexity perf with autofix and possible broken code
+  entry:
+    cargo clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
+    -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-upgrade
-    name: cargo-upgrade
-    description: cargo upgrade Cargo.toml dependencies
-    entry: cargo upgrade
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: nightly-cargo-format
+  name: nightly-cargo-format
+  description: cargo format with unstable features
+  entry: cargo +nightly fmt --all -- --unstable-features --config edition="2021",imports_granularity="Crate",format_macro_matchers=true,format_strings=true,reorder_impl_items=true,group_imports="StdExternalCrate",unstable_features=true,use_field_init_shorthand=true
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-update
-    name: cargo-update
-    description: cargo update dependencies
-    entry: cargo update
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: stable-cargo-format
+  name: stable-cargo-format
+  description: cargo format with specific stable Rust version
+  entry: cargo +stable fmt --all
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-udeps
-    name: cargo-udeps
-    description: cargo +nightly-2023-06-27 udeps - verify useless dependencies
-    entry: cargo +nightly-2023-06-27 udeps --workspace --all-targets --all-features
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-format
+  name: cargo-format
+  description: cargo format
+  entry: cargo fmt --all
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-test
-    name: cargo-test
-    description: cargo test
-    entry: cargo test
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-dry-publish
+  name: cargo-dry-publish
+  description: cargo publish (dry)
+  entry: cargo publish --dry-run
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-test-doc
-    name: cargo-test-doc
-    description: cargo test and run doc examples
-    entry: cargo test --all-features --doc --workspace
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-upgrade
+  name: cargo-upgrade
+  description: cargo upgrade Cargo.toml dependencies
+  entry: cargo upgrade
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-build-kms
-    name: cargo-build-kms
-    description: cargo build --no-default-features --features insecure
-    entry: cargo build --no-default-features --features insecure
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-update
+  name: cargo-update
+  description: cargo update dependencies
+  entry: cargo update
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: cargo-machete
-    name: cargo-machete
-    description: cargo machete
-    entry: cargo machete
-    language: system
-    types: [rust]
-    pass_filenames: false
+- id: cargo-udeps
+  name: cargo-udeps
+  description: cargo +nightly-2023-06-27 udeps - verify useless dependencies
+  entry: cargo +nightly-2023-06-27 udeps --workspace --all-targets --all-features
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: dprint-toml-fix
-    name: dprint-toml-fix
-    description: dprint linter/formatter (in Rust)
-    entry: dprint --config https://raw.githubusercontent.com/Cosmian/git-hooks/main/dprint.json fmt -- '**/*.toml'
-    language: system
-    types: [text]
-    pass_filenames: false
+- id: cargo-test
+  name: cargo-test
+  description: cargo test
+  entry: cargo test
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: npm-run-format
-    name: npm-run-format
-    description: npm run format
-    entry: npm run format
-    language: system
-    types: [text]
-    pass_filenames: false
+- id: cargo-test-doc
+  name: cargo-test-doc
+  description: cargo test and run doc examples
+  entry: cargo test --all-features --doc --workspace
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: npm-install
-    name: npm-install
-    description: npm install
-    entry: npm install
-    language: system
-    types: [text]
-    pass_filenames: false
+- id: cargo-build-kms
+  name: cargo-build-kms
+  description: cargo build --no-default-features --features insecure
+  entry: cargo build --no-default-features --features insecure
+  language: system
+  types: [rust]
+  pass_filenames: false
 
-  - id: npm-test
-    name: npm-test
-    description: npm test
-    entry: npm test
-    language: system
-    types: [text]
-    pass_filenames: false
+- id: cargo-machete
+  name: cargo-machete
+  description: cargo machete
+  entry: cargo machete
+  language: system
+  types: [rust]
+  pass_filenames: false
+
+- id: dprint-toml-fix
+  name: dprint-toml-fix
+  description: dprint linter/formatter (in Rust)
+  entry: dprint --config https://raw.githubusercontent.com/Cosmian/git-hooks/main/dprint.json fmt -- '**/*.toml'
+  language: system
+  types: [text]
+  pass_filenames: false
+
+- id: npm-run-format
+  name: npm-run-format
+  description: npm run format
+  entry: npm run format
+  language: system
+  types: [text]
+  pass_filenames: false
+
+- id: npm-install
+  name: npm-install
+  description: npm install
+  entry: npm install
+  language: system
+  types: [text]
+  pass_filenames: false
+
+- id: npm-test
+  name: npm-test
+  description: npm test
+  entry: npm test
+  language: system
+  types: [text]
+  pass_filenames: false
