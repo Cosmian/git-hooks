@@ -302,6 +302,14 @@
   types: [rust]
   pass_filenames: false
 
+- id: renew-kms-markdown
+  name: renew-kms-markdown
+  description: ./target/debug/ckms markdown documentation/docs/cli/main_commands.md
+  entry: ./target/debug/ckms markdown documentation/docs/cli/main_commands.md
+  language: system
+  types: [rust]
+  pass_filenames: false
+
 - id: cargo-build-kms
   name: cargo-build-kms
   description: cargo build --no-default-features --features insecure
