@@ -274,8 +274,8 @@
 
 - id: cargo-test
   name: cargo-test
-  description: cargo test --all-features --workspace
-  entry: cargo test --all-features --workspace
+  description: cargo test --workspace
+  entry: cargo test --workspace
   language: system
   types: [rust]
   pass_filenames: false
@@ -283,7 +283,7 @@
 - id: cargo-test-doc
   name: cargo-test-doc
   description: cargo test and run doc examples
-  entry: cargo test --all-features --doc --workspace
+  entry: cargo test --doc --workspace
   language: system
   types: [rust]
   pass_filenames: false
