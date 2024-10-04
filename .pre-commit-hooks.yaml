@@ -71,6 +71,14 @@
   types: [rust]
   pass_filenames: false
 
+- id: clippy-all-targets
+  name: clippy all with all targets
+  description: cargo clippy all with all targets
+  entry: cargo clippy --workspace --all-targets -- -D warnings
+  language: system
+  types: [rust]
+  pass_filenames: false
+
 - id: clippy-all-targets-all-features-no-findex
   name: clippy all with all targets and all features no findex
   description: cargo clippy all with all targets and all features
