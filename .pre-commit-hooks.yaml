@@ -351,3 +351,19 @@
   language: system
   types: [text]
   pass_filenames: false
+
+- id: clippy-autofix-all-targets-all-features
+  name: clippy all with autofix with all targets and all features
+  description: clippy all with autofix with all targets and all features
+  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
+  language: system
+  types: [rust]
+  pass_filenames: false
+
+- id: clippy-autofix-all-targets
+  name: clippy all with autofix with all targets
+  description: clippy all with autofix with all targets
+  entry: cargo clippy --all-targets --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
+  language: system
+  types: [rust]
+  pass_filenames: false
