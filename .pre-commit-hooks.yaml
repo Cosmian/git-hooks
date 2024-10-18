@@ -154,7 +154,7 @@
 - id: clippy-autofix-unreachable-pub-broken-code
   name: clippy unreachable-pub with autofix and possible-broken-code
   description: clippy unreachable-pub with autofix and possible-broken-code
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W unreachable-pub
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W unreachable-pub
   language: system
   types: [rust]
   pass_filenames: false
@@ -162,7 +162,7 @@
 - id: clippy-autofix-unreachable-pub
   name: clippy unreachable-pub with autofix
   description: clippy unreachable-pub with autofix
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W unreachable-pub
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W unreachable-pub
   language: system
   types: [rust]
   pass_filenames: false
@@ -355,7 +355,7 @@
 - id: clippy-autofix-all-targets-all-features
   name: clippy all with autofix with all targets and all features
   description: clippy all with autofix with all targets and all features
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
   language: system
   types: [rust]
   pass_filenames: false
@@ -363,7 +363,7 @@
 - id: clippy-autofix-all-targets
   name: clippy all with autofix with all targets
   description: clippy all with autofix with all targets
-  entry: cargo clippy --all-targets --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
+  entry: cargo +nightly clippy --all-targets --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
   language: system
   types: [rust]
   pass_filenames: false
