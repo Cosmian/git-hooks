@@ -312,6 +312,14 @@
   types: [rust]
   pass_filenames: false
 
+- id: renew-cosmian-markdown
+  name: renew-cosmian-markdown
+  description: ./target/debug/cosmian markdown documentation/docs/cli/main_commands.md
+  entry: ./target/debug/cosmian markdown documentation/docs/cli/main_commands.md
+  language: system
+  types: [rust]
+  pass_filenames: false
+
 - id: cargo-build-kms
   name: cargo-build-kms
   description: cargo build --no-default-features --features insecure
