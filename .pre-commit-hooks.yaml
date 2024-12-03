@@ -50,14 +50,14 @@
 - id: redis-container-up
   name: start redis container
   description: docker run --detach --rm --name redis-findex -t redis
-  entry: docker run --detach --rm --name redis-findex -t redis
+  entry: docker run -p 6379:6379 --detach --rm --name redis-findex -t redis
   language: system
   types: [text]
   pass_filenames: false
 
 - id: redis-container-down
   name: stop redis container
-  description: docker  run --detach --rm --name redis-findex -t redis
+  description: docker stop redis-findex
   entry: docker stop redis-findex
   language: system
   types: [text]
