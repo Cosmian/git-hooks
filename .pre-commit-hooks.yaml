@@ -352,6 +352,14 @@
   types: [rust]
   pass_filenames: false
 
+- id: cargo-build
+  name: cargo-build
+  description: cargo build --all-targets --tests --workspace
+  entry: cargo build --all-targets --tests --workspace
+  language: system
+  types: [rust]
+  pass_filenames: false
+
 - id: cargo-machete
   name: cargo-machete
   description: cargo machete
