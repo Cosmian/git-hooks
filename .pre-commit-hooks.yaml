@@ -306,8 +306,8 @@
 
 - id: cargo-test
   name: cargo-test
-  description: cargo test --workspace
-  entry: cargo test --workspace
+  description: cargo test --workspace --bins --lib
+  entry: cargo test --workspace --bins --lib
   language: system
   types: [rust]
   pass_filenames: false
