@@ -328,6 +328,14 @@
   types: [rust]
   pass_filenames: false
 
+- id: renew-server-cli-doc
+  name: renew-server-cli-doc
+  description: ./target/debug/cosmian_kms_server -h > documentation/docs/server_cli.md
+  entry: ./target/debug/cosmian_kms_server -h > documentation/docs/server_cli.md
+  language: system
+  types: [rust]
+  pass_filenames: false
+
 - id: renew-cosmian-markdown
   name: renew-cosmian-markdown
   description: ./target/debug/cosmian markdown documentation/docs/cli/main_commands.md
