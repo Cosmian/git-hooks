@@ -71,10 +71,10 @@
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-all-possible-broken-code
-  name: clippy all with autofix and possible broken code
-  description: clippy all with autofix and possible broken code
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -Wmissing_docs -W clippy::all
+- id: nightly-clippy-autofix-all-possible-broken-code
+  name: +nightly clippy all with autofix and possible broken code
+  description: +nightly clippy all with autofix and possible broken code
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -Wmissing_docs -W clippy::all
   language: system
   types: [rust]
   pass_filenames: false
@@ -111,131 +111,131 @@
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-all
-  name: clippy all with autofix
-  description: clippy all with autofix
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -Wmissing_docs -W clippy::all
+- id: nightly-clippy-autofix-all
+  name: +nightly clippy all with autofix
+  description: +nightly clippy all with autofix
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -Wmissing_docs -W clippy::all
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-all-no-findex
-  name: clippy all with autofix no findex
-  description: clippy all with autofix
-  entry: cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -Wmissing_docs -W clippy::all
+- id: nightly-clippy-autofix-all-no-findex
+  name: +nightly clippy all with autofix no findex
+  description: +nightly clippy all with autofix
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -Wmissing_docs -W clippy::all
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-pedantic-possible-broken-code
-  name: clippy pedantic with autofix and possible broken code
-  description: clippy pedantic with autofix and possible broken code
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W clippy::pedantic
+- id: nightly-clippy-autofix-pedantic-possible-broken-code
+  name: +nightly clippy pedantic with autofix and possible broken code
+  description: +nightly clippy pedantic with autofix and possible broken code
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W clippy::pedantic
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-pedantic
-  name: clippy pedantic with autofix
-  description: cargo clippy pedantic
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::pedantic
+- id: nightly-clippy-autofix-pedantic
+  name: +nightly clippy pedantic with autofix
+  description: cargo +nightly clippy pedantic
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::pedantic
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-pedantic-no-findex
-  name: clippy pedantic with autofix no findex
-  description: cargo clippy pedantic
-  entry: cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::pedantic
+- id: nightly-clippy-autofix-pedantic-no-findex
+  name: +nightly clippy pedantic with autofix no findex
+  description: cargo +nightly clippy pedantic
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::pedantic
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-nursery-possible-broken-code
-  name: clippy nursery with autofix and possible-broken-code
-  description: clippy nursery with autofix and possible-broken-code
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W clippy::nursery -A clippy::redundant_pub_crate
+- id: nightly-clippy-autofix-nursery-possible-broken-code
+  name: +nightly clippy nursery with autofix and possible-broken-code
+  description: +nightly clippy nursery with autofix and possible-broken-code
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W clippy::nursery -A clippy::redundant_pub_crate
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-nursery
-  name: clippy nursery with autofix
-  description: clippy nursery with autofix
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::nursery -A clippy::redundant_pub_crate
+- id: nightly-clippy-autofix-nursery
+  name: +nightly clippy nursery with autofix
+  description: +nightly clippy nursery with autofix
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::nursery -A clippy::redundant_pub_crate
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-unreachable-pub-broken-code
-  name: clippy unreachable-pub with autofix and possible-broken-code
-  description: clippy unreachable-pub with autofix and possible-broken-code
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W unreachable-pub
+- id: nightly-clippy-autofix-unreachable-pub-broken-code
+  name: +nightly clippy unreachable-pub with autofix and possible-broken-code
+  description: +nightly clippy unreachable-pub with autofix and possible-broken-code
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W unreachable-pub
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-unreachable-pub
-  name: clippy unreachable-pub with autofix
-  description: clippy unreachable-pub with autofix
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W unreachable-pub
+- id: nightly-clippy-autofix-unreachable-pub
+  name: +nightly clippy unreachable-pub with autofix
+  description: +nightly clippy unreachable-pub with autofix
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W unreachable-pub
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-nursery-no-findex
-  name: clippy nursery with autofix no findex
-  description: clippy nursery with autofix
-  entry: cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::nursery -A clippy::redundant_pub_crate
+- id: nightly-clippy-autofix-nursery-no-findex
+  name: +nightly clippy nursery with autofix no findex
+  description: +nightly clippy nursery with autofix
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::nursery -A clippy::redundant_pub_crate
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-others-possible-broken-code
-  name: clippy correctness suspicious style complexity perf with autofix and possible broken code
-  description: clippy correctness suspicious style complexity perf with autofix and possible broken code
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+- id: nightly-clippy-autofix-others-possible-broken-code
+  name: +nightly clippy correctness suspicious style complexity perf with autofix and possible broken code
+  description: +nightly clippy correctness suspicious style complexity perf with autofix and possible broken code
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-others
-  name: clippy correctness suspicious style complexity perf with autofix
-  description: clippy correctness suspicious style complexity perf with autofix
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+- id: nightly-clippy-autofix-others
+  name: +nightly clippy correctness suspicious style complexity perf with autofix
+  description: +nightly clippy correctness suspicious style complexity perf with autofix
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-others-no-findex
-  name: clippy correctness suspicious style complexity perf with autofix no findex
-  description: clippy correctness suspicious style complexity perf with autofix
-  entry: cargo clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+- id: nightly-clippy-autofix-others-no-findex
+  name: +nightly clippy correctness suspicious style complexity perf with autofix no findex
+  description: +nightly clippy correctness suspicious style complexity perf with autofix
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --exclude cloudproof_findex --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
   language: system
   types: [rust]
   pass_filenames: false
 
 ### FINDEX feature
-- id: clippy-autofix-ffi-findex
-  name: clippy all lints included. Scope=ffi
-  description: clippy correctness suspicious style complexity perf with autofix
-  entry: cargo clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+- id: nightly-clippy-autofix-ffi-findex
+  name: +nightly clippy all lints included. Scope=ffi
+  description: +nightly clippy correctness suspicious style complexity perf with autofix
+  entry: cargo +nightly clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-python-findex
-  name: clippy all lints included. Scope=python
-  description: clippy correctness suspicious style complexity perf with autofix
-  entry: cargo clippy --all-targets --features python --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+- id: nightly-clippy-autofix-python-findex
+  name: +nightly clippy all lints included. Scope=python
+  description: +nightly clippy correctness suspicious style complexity perf with autofix
+  entry: cargo +nightly clippy --all-targets --features python --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-wasm-findex
-  name: clippy all lints included. Scope=wasm_bindgen
-  description: clippy correctness suspicious style complexity perf with autofix
-  entry: cargo clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+- id: nightly-clippy-autofix-wasm-findex
+  name: +nightly clippy all lints included. Scope=wasm_bindgen
+  description: +nightly clippy correctness suspicious style complexity perf with autofix
+  entry: cargo +nightly clippy --all-targets --features ffi --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings -W clippy::all -W clippy::pedantic -W clippy::nursery -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
   language: system
   types: [rust]
   pass_filenames: false
@@ -408,18 +408,18 @@
   types: [text]
   pass_filenames: false
 
-- id: clippy-autofix-all-targets-all-features
-  name: clippy all with autofix with all targets and all features
-  description: clippy all with autofix with all targets and all features
-  entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
+- id: nightly-clippy-autofix-all-targets-all-features
+  name: +nightly clippy all with autofix with all targets and all features
+  description: +nightly clippy all with autofix with all targets and all features
+  entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
   language: system
   types: [rust]
   pass_filenames: false
 
-- id: clippy-autofix-all-targets
-  name: clippy all with autofix with all targets
-  description: clippy all with autofix with all targets
-  entry: cargo clippy --all-targets --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
+- id: nightly-clippy-autofix-all-targets
+  name: clippy +nightly all with autofix with all targets
+  description: clippy +nightly all with autofix with all targets
+  entry: cargo +nightly clippy --all-targets --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
   language: system
   types: [rust]
   pass_filenames: false
